@@ -1,13 +1,13 @@
 @font-face {
     font-family: "Creepy";
-    src: url("Assets/Fonts/Creepy.woff") format("woff"),
-         url("Assets/Fonts/Creepy.woff2") format("woff2");
+    src: url("Assets/Fonts/GABRWFFR.TTF") format("woff"),
+         url("Assets/Fonts/GABRWFFR.TTF") format("woff2");
 }
 
 @font-face {
     font-family: "Lunacy";
-    src: url("Assets/Fonts/Lunacy.woff") format("woff"),
-         url("Assets/Fonts/Lunacy.woff2") format("woff2");
+    src: url("Assets/Fonts/GABRWFFR.TTF") format("woff"),
+         url("Assets/Fonts/GABRWFFR.TTF") format("woff2");
 }
 
 * {
@@ -16,17 +16,20 @@
 
 html {
   min-height: 100vh;
-  cursor: url(Assets/Cursors/Ghost.cur), auto;
+  cursor: url(Assets/Cursors/Red\ Cursor\ Pack.cur), auto;
   font-family: Lunacy;
 }
 
 body {
   margin: 0;
-  background: radial-gradient(#9D5900, #3D2200);
+  background-image: url('Assets/Images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .page-title {
-  color: #FF6D00;
+  color: #8229af;
   font-family: Creepy, serif;
   font-weight: normal;
   text-align: center;
@@ -40,8 +43,8 @@ body {
 }
 
 .game-info {
-  color: #FFBB89;
-  font-size: 4em;
+  color: #cdc604;
+  font-size: 2em;
 }
 
 .game-container {
@@ -55,7 +58,7 @@ body {
 
 .card {
   position: relative;
-  cursor: url("Assets/Cursors/GhostHover.cur"), auto;
+  cursor: url("Assets/Cursors/Red\ Cursor\ Pack.cur"), auto;
   height: 175px;
   width: 125px;
 }
@@ -88,58 +91,34 @@ body {
 }
 
 .card-back {
-  background-color: black;
-  border-color: #FF6D00;
+  background-color: #8229af;
+  border-color: #8229af;
   transform: rotateY(0); 
 }
 
-.cob-web {
-  position: absolute;
-  transition: width 100ms ease-in-out, height 100ms ease-in-out;
-  width: 47px;
-  height: 47px;
-}
+
 
 .card-face:hover .cob-web {
   width: 52px;
   height: 52px;
 }
 
-.cob-web-top-left {
-  transform: rotate(270deg);
-  top: 0;
-  left: 0;
+
+.door {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  transform: translate(1.5px,2px);
 }
 
-.cob-web-top-right {
-  top: 0;
-  right: 0;
-}
-
-.cob-web-bottom-left {
-  transform: rotate(180deg);
-  bottom: 0;
-  left: 0;
-}
-
-.cob-web-bottom-right {
-  transform: rotate(90deg);
-  bottom: 0;
-  right: 0;
-}
-
-.spider {
-  align-self: flex-start;
-  transition: transform 100ms ease-in-out;
-  transform: translateY(-10px);
-}
-
-.card-back:hover .spider {
+.card-back:hover .door {
   transform: translateY(0);
 }
 
 .card-value {
-  position: relative;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
   transition: transform 100ms ease-in-out;
   transform: scale(.9);
 }
@@ -149,7 +128,7 @@ body {
 }
 
 .card-front {
-  background-color: #FFBB89;
+  background-color:  rgb(247, 245, 245);
   border-color: #333;
   transform: rotateY(180deg);
 }
@@ -165,7 +144,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #FF6D00;
+  color: #8229af;
   font-family: Creepy, serif;
   transition: background-color 500ms, font-size 500ms;
 }
